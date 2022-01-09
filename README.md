@@ -35,8 +35,9 @@ step 3:
     sudo ln -s /etc/nginx/sites-available/line.conf /etc/nginx/sites-enabled/line.conf
     sudo vim /etc/nginx/sites-available/line.conf
 
-    paste on line.conf
-    '''
+paste on line.conf
+   
+   '''
 
     server {
         server_name YOUR_SERVER_NAME;
