@@ -1,6 +1,6 @@
 Ubuntu 18.04
 
---Python game with linebot--
+--Python game on linebot--
 
 On CMD:
 
