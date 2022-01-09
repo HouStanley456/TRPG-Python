@@ -2,6 +2,7 @@ Ubuntu 18.04
 --Python game with linebot--
 
 1.On CMD:
+
 step 1:
     sudo apt-get update ;
     sudo apt-get install -y python3-pip unzip ;
