@@ -1,10 +1,10 @@
 Ubuntu 18.04 
 
-    you can use:
+you can use:
 
-        VM 
-        GCP
-        AWS
+    VM 
+    GCP
+    AWS        
 
 --Python game on linebot--
 
