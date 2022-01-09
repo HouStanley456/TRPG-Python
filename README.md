@@ -2,9 +2,9 @@ Ubuntu 18.04
 
 you can use:
 
-    VM 
-    GCP
-    AWS        
+    -VM 
+    -GCP Google Cloud Platform
+    -AWS       
 
 --Python game on linebot--
 
