@@ -58,7 +58,7 @@ step 4:
 step 5:
     
     sudo apt-get install git-all
-    sudo git clone ........
+    sudo git clone https://github.com/HouStanley456/TRPG-on-LineBOT.git
     
 step 6:
     
