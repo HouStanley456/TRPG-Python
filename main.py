@@ -25,7 +25,7 @@ class State(Enum):
 #LineBot設定
 line_bot_api = LineBotApi('你的 CHANNEL_ACCESS_TOKEN')
 handler = WebhookHandler('你的 CHANNEL_SECRET')
-#--------------------------
+
 
 
 #--------------------------------------------------------------------------#
@@ -149,7 +149,7 @@ class BOSS:
     #傷害
     def ac(self):
             return random.randint(self.minac,self.maxac)
-#----------------------------#定義 player
+#-------------定義 player---------------#
           
 state = State.NORMAL
 
@@ -170,7 +170,7 @@ create = {
 }
 df = pd.DataFrame(create)
 
-#------------------------------------------------------
+#------------------------------------------------------#
 
 #LineBot認證
 @app.route("/callback", methods=['POST'])
