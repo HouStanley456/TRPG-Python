@@ -63,9 +63,11 @@ step 5:
     
 step 6:
     
-    Change Your CHANNEL_ACCESS_TOKEN and CHANNEL_SECRET :
-    line_bot_api = LineBotApi('你的 CHANNEL_ACCESS_TOKEN')
-    handler = WebhookHandler('你的 CHANNEL_SECRET')
+    sudo vim main.py
+    
+        Change Your CHANNEL_ACCESS_TOKEN and CHANNEL_SECRET :
+        line_bot_api = LineBotApi('你的 CHANNEL_ACCESS_TOKEN')
+        handler = WebhookHandler('你的 CHANNEL_SECRET')
        
 step 7: 
     
