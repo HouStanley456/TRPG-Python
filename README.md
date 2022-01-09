@@ -48,6 +48,7 @@ step 3:
     }
 
     '''
+    #YOUR_SERVER_NAME is your server ip 
 
 step 4:
     
@@ -66,6 +67,7 @@ step 6:
     handler = WebhookHandler('你的 CHANNEL_SECRET')
        
 step 7: 
+    
     uwsgi -w main:app -s :3000
     
     
