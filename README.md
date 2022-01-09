@@ -1,12 +1,14 @@
 Ubuntu 18.04 
 
+--Python game on linebot--
+
 you can use:
 
     -VM 
     -GCP Google Cloud Platform
     -AWS       
 
---Python game on linebot--
+
 
 On CMD:
 
