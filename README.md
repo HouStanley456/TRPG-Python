@@ -1,7 +1,7 @@
 Ubuntu 18.04
 --Python game with linebot--
 
-1.On CMD:
+On CMD:
 
 step 1:
     
