@@ -37,8 +37,7 @@ step 3:
 
 paste on line.conf
    
-   '''
-
+    '''
     server {
         server_name YOUR_SERVER_NAME;
 
