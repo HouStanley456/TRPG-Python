@@ -1,4 +1,10 @@
-Ubuntu 18.04
+Ubuntu 18.04 
+
+    you can use:
+
+        VM 
+        GCP
+        AWS
 
 --Python game on linebot--
 
