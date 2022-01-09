@@ -1,5 +1,5 @@
 from flask import Flask
-import pandas as pd
+
 app = Flask(__name__)
 #LineBot
 from flask import Flask
@@ -25,7 +25,6 @@ class State(Enum):
 #LineBot設定
 line_bot_api = LineBotApi('你的 CHANNEL_ACCESS_TOKEN')
 handler = WebhookHandler('你的 CHANNEL_SECRET')
-
 
 
 #--------------------------------------------------------------------------#
@@ -72,28 +71,11 @@ class character:
             return random.randint(self.minac,self.maxac)
     #存檔
     def save(self):
-        data= {
-        "user_id":[user_id],
-        "name": [self.name],
-        "rank": [self.rank],
-        "exp": [self.exp],
-        "maxexp": [self.maxexp],
-        "hp": [self.hp],
-        "maxhp": [self.maxhp],
-        "minac": [self.minac],
-        "maxac": [self.maxac],
-        "speed": [self.speed],
-        "money": [self.money],
-        "challenge":[self.challenge]
-        }
-        df = pd.DataFrame(data)
-        
-        
-#        s=self.name+'\n'+str(self.rank)+'\n'+str(self.exp)+'\n'+str(self.maxexp)+'\n'+str(self.hp)+'\n'
-#        s+=str(self.maxhp)+'\n'+str(self.minac)+'\n'+str(self.maxac)+'\n'+str(self.speed)+'\n'+str(self.money)+'\n'
-#        s+=str(self.challenge)
-#        with open( f'{user_id}.save','w') as f:
-#            f.write(s)
+        s=self.name+'\n'+str(self.rank)+'\n'+str(self.exp)+'\n'+str(self.maxexp)+'\n'+str(self.hp)+'\n'
+        s+=str(self.maxhp)+'\n'+str(self.minac)+'\n'+str(self.maxac)+'\n'+str(self.speed)+'\n'+str(self.money)+'\n'
+        s+=str(self.challenge)
+        with open( f'{user_id}.save','w') as f:
+            f.write(s)
 
 class Monster:
     #新角色能力值
@@ -149,28 +131,13 @@ class BOSS:
     #傷害
     def ac(self):
             return random.randint(self.minac,self.maxac)
-#-------------定義 player---------------#
+#----------------------------#定義 player
           
 state = State.NORMAL
 
 player = character('英雄')
 
-create = {
-    "user_id":[''],
-    "name": [''],
-    "rank": [''],
-    "exp": [''],
-    "maxexp": [''],
-    "hp": [''],
-    "maxhp": [''],
-    "minac": [''],
-    "maxac": [''],
-    "speed": [''],
-    "money": ['']
-}
-df = pd.DataFrame(create)
-
-#------------------------------------------------------#
+#------------------------------------------------------
 
 #LineBot認證
 @app.route("/callback", methods=['POST'])
@@ -316,7 +283,7 @@ def handle_message(event):
         nn = text
         flagname = newhero(event)
         state = State.NORMAL
-        
+    
     elif state == State.OPTION:
         line_bot_api.reply_message(event.reply_token, TemplateSendMessage(alt_text='行動選單',
                 template=ButtonsTemplate(thumbnail_image_url='https://i.imgur.com/wJPxRAo.png',title='行動選單',text=' 英雄你現在要做什麼？',
@@ -421,22 +388,24 @@ def newhero(event):
 
 
 def loadhero(event):  
-    try:
-        if user_id in df.user_id:
-            player=character(df['name'])
-            player.rank=int(df['rank'])
-            player.exp=int(df['exp'])
-            player.maxexp=int(df['maxexp'])
-            player.hp=int(df['hp'])
-            player.maxhp=int(df['maxhp'])
-            player.minac=int(df['minac'])
-            player.maxac=int(df['maxac'])
-            player.speed=float(df['speed'])
-            player.money=int(df['money'])
-            player.challenge=int(df['challenge'])
+    if os.path.exists(f'{user_id}.save'):
+        try:
+            with open(f'{user_id}.save','r') as f:
+                d=f.read().split('\n')
+            player=character(d[0])
+            player.rank=int(d[1])
+            player.exp=int(d[2])
+            player.maxexp=int(d[3])
+            player.hp=int(d[4])
+            player.maxhp=int(d[5])
+            player.minac=int(d[6])
+            player.maxac=int(d[7])
+            player.speed=float(d[8])
+            player.money=int(d[9])
+            player.challenge=int(d[10])
             load=['歡迎回來，英雄！']
-    except:
-        load=['您沒有存檔']
+        except Exception as e:
+            load=['存檔讀取出錯']        
     return load 
 
 
@@ -534,7 +503,7 @@ def heal(event,who):
             who.hp+=who.money
             who.money=0
     else:
-        healing =['你的心靈得到救贖...']
+        healing =['你的心靈得到救贖...但生命值沒有...']
     try:
         
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text='\n'.join(healing)),TemplateSendMessage(alt_text='行動選單',
@@ -594,8 +563,14 @@ def option(event):    #開始選單
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-    
+        
+
 
 #-----------------------------------------------------------------------#
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+            
+            
