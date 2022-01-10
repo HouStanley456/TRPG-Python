@@ -57,7 +57,7 @@ paste on line.conf
     }
 
     '''
-    #YOUR_SERVER_NAME is your server ip 
+    #YOUR_SERVER_NAME need to change
 
 step 4:
     
