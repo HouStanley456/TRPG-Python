@@ -58,6 +58,7 @@ paste on line.conf
 
     '''
     #YOUR_SERVER_NAME need to change
+    #Godaddy https://tw.godaddy.com/
 
 step 4:
     
