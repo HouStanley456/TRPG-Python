@@ -14,21 +14,11 @@ On CMD:
 
 step 1:
     
-    sudo apt-get update ;
-    sudo apt-get install -y python3-pip unzip ;
-    sudo timedatectl set-timezone Asia/Taipei ;
-    pip3 install flask line-bot-sdk uwsgi ;
-    source .profile 
+    sudo apt-get update; sudo apt-get install -y python3-pip unzip; sudo timedatectl set-timezone Asia/Taipei; pip3 install flask line-bot-sdk uwsgi; source .profile
 
 step 2:
     
-    sudo apt-get update ;
-    sudo apt-get install -y nginx ;
-    sudo timedatectl set-timezone Asia/Taipei; 
-    sudo snap install core ;
-    sudo snap refresh core ;
-    sudo snap install --classic certbot ;
-    sudo ln -s /snap/bin/certbot /usr/bin/certbot
+    sudo apt-get update; sudo apt-get install -y nginx; sudo timedatectl set-timezone Asia/Taipei; sudo snap install core; sudo snap refresh core; sudo snap install --classic certbot; sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 step 3:
     
