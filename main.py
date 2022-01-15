@@ -1,6 +1,3 @@
-from flask import Flask
-
-app = Flask(__name__)
 #LineBot
 from flask import Flask
 app = Flask(__name__)
@@ -23,8 +20,8 @@ class State(Enum):
     OPTION = 5
     GAMEOVER = 6
 #LineBot設定
-line_bot_api = LineBotApi('你的 CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('你的 CHANNEL_SECRET')
+line_bot_api = LineBotApi('90RHjJ386QB0s3JLDd+2AeuLhYqseu9cX27mBBrYEJHcip1fJ12JUmVjUB7RAAgm4UBnSAbL/Xxi15VRPsBLtZVQQlpnzWc12zsySVvRhic7h4PLfBFMAZIRswSR5/saYEOxXY8y1ssF0KLwn20V1AdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('c34c0c0d1291eb04f64dfcafc023f268')
 
 
 #--------------------------------------------------------------------------#
@@ -503,7 +500,7 @@ def heal(event,who):
             who.hp+=who.money
             who.money=0
     else:
-        healing =['你的心靈得到救贖...但生命值沒有...']
+        healing =['你的心靈得到救贖...']
     try:
         
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text='\n'.join(healing)),TemplateSendMessage(alt_text='行動選單',
@@ -573,4 +570,11 @@ if __name__ == '__main__':
 
 
             
+            
+            
+            
+            
+            
+            
+
             
