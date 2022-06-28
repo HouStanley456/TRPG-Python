@@ -20,7 +20,7 @@ class State(Enum):
     OPTION = 5
     GAMEOVER = 6
 #LineBot設定
-line_bot_api = LineBotApi('90RHjJ386QB0s3JLDd+2AeuLhYqseu9cX27mBBrYEJHcip1fJ12JUmVjUB7RAAgm4UBnSAbL/Xxi15VRPsBLtZVQQlpnzWc12zsySVvRhic7h4PLfBFMAZIRswSR5/saYEOxXY8y1ssF0KLwn20V1AdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('7eV0XH+Y0faSqLtnDtvH3JgMME8p1QXcbJfPmjdiZ3ewtVG/zh4kR7gg1Ghg748M4UBnSAbL/Xxi15VRPsBLtZVQQlpnzWc12zsySVvRhieM8wpLMwt3vpGYX7uCdL3SbzyTyeKbuXYLAwMEpUfxhAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('c34c0c0d1291eb04f64dfcafc023f268')
 
 
